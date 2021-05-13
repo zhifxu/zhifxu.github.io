@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="ArchLinux," />
 
 
 
@@ -94,14 +94,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="https://zhifxu.github.io/categories/index.html">
+<meta name="description" content="Refer to this link Partition Structure&#x2F;dev&#x2F;sda consist of   EFI Swap LVM &#x2F;dev&#x2F;sdb –&gt; fusioned partitionTo Be Continued">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Install ArchLinux in LVM">
+<meta property="og:url" content="https://zhifxu.github.io/2021/05/13/Install-ArchLinux-in-LVM/index.html">
 <meta property="og:site_name" content="golB yM">
+<meta property="og:description" content="Refer to this link Partition Structure&#x2F;dev&#x2F;sda consist of   EFI Swap LVM &#x2F;dev&#x2F;sdb –&gt; fusioned partitionTo Be Continued">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-05-13T02:34:56.000Z">
-<meta property="article:modified_time" content="2021-05-13T02:35:29.397Z">
+<meta property="article:published_time" content="2021-05-13T08:39:08.000Z">
+<meta property="article:modified_time" content="2021-05-13T08:45:37.842Z">
 <meta property="article:author" content="Zhif Xu">
+<meta property="article:tag" content="ArchLinux">
 <meta name="twitter:card" content="summary">
 
 
@@ -131,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="https://zhifxu.github.io/categories/"/>
+  <link rel="canonical" href="https://zhifxu.github.io/2021/05/13/Install-ArchLinux-in-LVM/"/>
 
 
 
 
 
-  <title>categories | golB yM</title>
+  <title>Install ArchLinux in LVM | golB yM</title>
   
 
 
@@ -268,40 +271,175 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhifxu.github.io/2021/05/13/Install-ArchLinux-in-LVM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="golB yM">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">categories</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="category-all-page">
-            <div class="category-all-title">
-                1 category in total
-            </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">3</span></li></ul>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">Install ArchLinux in LVM</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-05-13T16:39:08+08:00">
+                2021-05-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>Refer to this <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/LVM">link</a></p>
+<h2 id="Partition-Structure"><a href="#Partition-Structure" class="headerlink" title="Partition Structure"></a>Partition Structure</h2><p>/dev/sda consist of </p>
+<ol>
+<li>EFI</li>
+<li>Swap</li>
+<li>LVM<ul>
+<li>/dev/sdb –&gt; fusioned partition<h1 id="To-Be-Continued"><a href="#To-Be-Continued" class="headerlink" title="To Be Continued"></a>To Be Continued</h1></li>
+</ul>
+</li>
+</ol>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ArchLinux/" rel="tag"># ArchLinux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/05/13/Problems-In-ArchLinux/" rel="next" title="Problems In ArchLinux">
+                <i class="fa fa-chevron-left"></i> Problems In ArchLinux
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -334,8 +472,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -421,6 +568,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Partition-Structure"><span class="nav-number">1.</span> <span class="nav-text">Partition Structure</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#To-Be-Continued"><span class="nav-number"></span> <span class="nav-text">To Be Continued</span></a></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -541,10 +704,10 @@
 
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
-  
+
 
   
 

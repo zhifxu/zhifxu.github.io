@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="ArchLinux," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="static ipRefer to this linkpppoe connection method cp &#x2F;etc&#x2F;netctl&#x2F;examples&#x2F;pppoe &#x2F;etc&#x2F;netctl&#x2F; DNS proxy***Protect DNS from DNS hijackingRefer to this link Java in ArchLinuxSolution to the IntelliJ IDE">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Problems In ArchLinux">
+<meta property="og:url" content="https://zhifxu.github.io/2021/05/13/Problems-In-ArchLinux/index.html">
+<meta property="og:site_name" content="golB yM">
+<meta property="og:description" content="static ipRefer to this linkpppoe connection method cp &#x2F;etc&#x2F;netctl&#x2F;examples&#x2F;pppoe &#x2F;etc&#x2F;netctl&#x2F; DNS proxy***Protect DNS from DNS hijackingRefer to this link Java in ArchLinuxSolution to the IntelliJ IDE">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-05-13T07:49:08.000Z">
+<meta property="article:modified_time" content="2021-05-13T08:37:51.392Z">
+<meta property="article:author" content="Zhif Xu">
+<meta property="article:tag" content="ArchLinux">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://zhifxu.github.io/2021/05/13/Problems-In-ArchLinux/"/>
+
+
+
+
+
+  <title>Problems In ArchLinux | golB yM</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">golB yM</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhifxu.github.io/2021/05/13/Problems-In-ArchLinux/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="golB yM">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Problems In ArchLinux</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-05-13T15:49:08+08:00">
+                2021-05-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="static-ip"><a href="#static-ip" class="headerlink" title="static ip"></a>static ip</h2><p>Refer to this <a target="_blank" rel="noopener" href="https://www.ostechnix.com/configure-static-dynamic-ip-address-arch-linux/">link</a><br>pppoe connection method <code>cp /etc/netctl/examples/pppoe /etc/netctl/</code></p>
+<h2 id="DNS-proxy"><a href="#DNS-proxy" class="headerlink" title="DNS proxy"></a>DNS proxy</h2><p>***Protect DNS from DNS hijacking<br>Refer to this <a target="_blank" rel="noopener" href="https://www.4gml.com/thread-69.htm">link</a></p>
+<h2 id="Java-in-ArchLinux"><a href="#Java-in-ArchLinux" class="headerlink" title="Java in ArchLinux"></a>Java in ArchLinux</h2><h2 id="Solution-to-the-IntelliJ-IDEA-full-screen-in-Xmonad"><a href="#Solution-to-the-IntelliJ-IDEA-full-screen-in-Xmonad" class="headerlink" title="Solution to the IntelliJ IDEA full screen in Xmonad"></a>Solution to the IntelliJ IDEA full screen in Xmonad</h2><p>Refer to this <a target="_blank" rel="noopener" href="https://bbs.archlinux.org/viewtopic.php?id=95437">link</a></p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> XMonad.Hooks.SetWMName</span><br><span class="line"><span class="title">xmonad</span> $ defaultConfig &#123; startupHook = setWMName <span class="string">&quot;LG3D&quot;</span> &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="QEMU-in-ArchLinux"><a href="#QEMU-in-ArchLinux" class="headerlink" title="QEMU in ArchLinux"></a>QEMU in ArchLinux</h2><p>Refer to this <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/QEMU">link</a></p>
+<h2 id="Solution-to-multi-audio-cards-caused-no-speaker-out-in-ArchLinux"><a href="#Solution-to-multi-audio-cards-caused-no-speaker-out-in-ArchLinux" class="headerlink" title="Solution to multi audio cards caused no speaker out in ArchLinux"></a>Solution to multi audio cards caused no speaker out in ArchLinux</h2><p>Refer to this <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/QEMU">link</a></p>
+<blockquote>
+<p>sudo pacman -S alsa-utils<br>alsamixer<br>speaker-test -c2</p>
+</blockquote>
+<ul>
+<li>If there are more than one audio card in you system, specify the correct card which you inserted you speaker cable.<blockquote>
+<p>aplay -l <em><strong>to list all the audio cards</strong></em></p>
+</blockquote>
+</li>
+<li>Write the configuration to <code>/etc/asound.conf or ~/.asoundrc</code>  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">pcm.!<span class="keyword">default</span> &#123;</span><br><span class="line">    type hw</span><br><span class="line">    card <span class="number">2</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ctl.!<span class="keyword">default</span> &#123;</span><br><span class="line">    type hw</span><br><span class="line">    card <span class="number">2</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="ERROR-One-or-more-PGP-signatures-could-not-be-verified-arch-linux"><a href="#ERROR-One-or-more-PGP-signatures-could-not-be-verified-arch-linux" class="headerlink" title="ERROR: One or more PGP signatures could not be verified, arch linux"></a>ERROR: One or more PGP signatures could not be verified, arch linux</h2>Refer to this <a target="_blank" rel="noopener" href="https://superuser.com/questions/1210758/error-one-or-more-pgp-signatures-could-not-be-verified-arch-linux">link</a></li>
+</ul>
+<h2 id="Multi-monitors-in-ArchLinux"><a href="#Multi-monitors-in-ArchLinux" class="headerlink" title="Multi monitors in ArchLinux"></a>Multi monitors in ArchLinux</h2><p>Refer to this <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/Xrandr">link</a></p>
+<ul>
+<li>Use Arandr to DIY the monitor resolution and position like Windows, but Python environment is necessary cuz this tool write in python GUI.</li>
+<li>After save the Arandr configuration file, copy the file content and paste to the <code>~/.xinitrc</code>, so don’t need to configure this everytime you start the computer.<h2 id="Archlinuxcn"><a href="#Archlinuxcn" class="headerlink" title="Archlinuxcn"></a>Archlinuxcn</h2>Refer to this <a target="_blank" rel="noopener" href="https://github.com/archlinuxcn/repo">link</a><br>Mirror <a target="_blank" rel="noopener" href="https://github.com/archlinuxcn/mirrorlist-repo">list</a><br>This reposity include most AUR packages.<h2 id="Configuring-a-Socks-proxy-in-Chromium"><a href="#Configuring-a-Socks-proxy-in-Chromium" class="headerlink" title="Configuring a Socks proxy in Chromium"></a>Configuring a Socks proxy in Chromium</h2><blockquote>
+<p>chromium –proxy-server=”socks5://proxy_address:port”</p>
+</blockquote>
+<h2 id="If-the-Wifi-Conn-report-error"><a href="#If-the-Wifi-Conn-report-error" class="headerlink" title="If the Wifi Conn report error:"></a>If the Wifi Conn report error:</h2><blockquote>
+<p>sudo killall dhcpcd<br>sudo ifconfig wlp3s0 down</p>
+</blockquote>
+<h2 id="Pacman-Update-Error-in-File-Conflict"><a href="#Pacman-Update-Error-in-File-Conflict" class="headerlink" title="Pacman Update Error in File Conflict"></a>Pacman Update Error in File Conflict</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;Failed to commit transaction (conflicting files)&quot;</span> error</span><br><span class="line">If you see the following error: [1]</span><br><span class="line">	error: could not prepare transaction</span><br><span class="line">	error: failed to commit transaction (conflicting files)</span><br><span class="line">	package: /path/to/file exists <span class="keyword">in</span> filesystem</span><br><span class="line">	Errors occurred, no packages were upgraded.</span><br><span class="line">This is happening because pacman has detected a file conflict, and by design, will not overwrite files <span class="keyword">for</span> you. This is by design, not a flaw.</span><br><span class="line"></span><br><span class="line">The problem is usually trivial to solve. A safe way is to first check <span class="keyword">if</span> another package owns the file (pacman -Qo /path/to/file). If the file is owned by another package, file a bug report. If the file is not owned by another package, rename the file <span class="built_in">which</span> <span class="string">&#x27;exists in filesystem&#x27;</span> and re-issue the update <span class="built_in">command</span>. If all goes well, the file may <span class="keyword">then</span> be removed.</span><br><span class="line"></span><br><span class="line">[Updates] Error fetching https://discordapp.com/api/updates/stable?platform=linux&amp;version=0.0.9: Error: connect ECONNREFUSED 31.13.80.17:443</span><br><span class="line">[Modules] Host update failed: Error: connect ECONNREFUSED 31.13.80.17:443</span><br></pre></td></tr></table></figure>
+<h2 id="If-only-one-software-can-play-sound-at-one-time-try-this"><a href="#If-only-one-software-can-play-sound-at-one-time-try-this" class="headerlink" title="If only one software can play sound at one time, try this"></a>If only one software can play sound at one time, try this</h2>Refer to the <a target="_blank" rel="noopener" href="https://www.linuxquestions.org/questions/slackware-14/adding-dmix-alsaequal-to-asound-conf-to-use-two-or-more-simultaneous-audio-streams-4175623574/">link1</a><a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">link2</a><a target="_blank" rel="noopener" href="https://aur.archlinux.org/packages/alsaequal/">link3</a><a target="_blank" rel="noopener" href="https://dev.to/setevoy/linux-alsa-lib-pcmdmixc1108sndpcmdmixopen-unable-to-open-slave-38on">link4</a><br>Install Alsaequal from AUR in link3 &amp; Add the Configuration in link2.<h2 id="Downgrade-the-package"><a href="#Downgrade-the-package" class="headerlink" title="Downgrade the package"></a>Downgrade the package</h2>Refer to this <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/Arch_Linux_Archive">link</a><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">download the version of your package and use sudo pacman -U package_file to downgrade the definite package.</span><br><span class="line"></span><br><span class="line">about the file corruptions : just remove them, with the main files, mv them to the .bak file so u can recover them <span class="keyword">if</span> you got any trouble after you pacman you package.</span><br><span class="line"></span><br><span class="line">[https://mirror.tuna.tsinghua.edu.cn/<span class="built_in">help</span>/archlinux/](https://mirror.tuna.tsinghua.edu.cn/<span class="built_in">help</span>/archlinux/)</span><br><span class="line"></span><br><span class="line">pip errors:</span><br><span class="line"></span><br><span class="line">[https://stackoverflow.com/questions/39845636/the-pip-7-1-0-distribution-was-not-found-and-is-required-by-the-application](https://stackoverflow.com/questions/39845636/the-pip-7-1-0-distribution-was-not-found-and-is-required-by-the-application)</span><br><span class="line"></span><br><span class="line">[https://stackoverflow.com/questions/7446187/no-module-named-pkg-resources](https://stackoverflow.com/questions/7446187/no-module-named-pkg-resources)</span><br></pre></td></tr></table></figure>
+<h2 id="Add-PGP-keys"><a href="#Add-PGP-keys" class="headerlink" title="Add PGP keys"></a>Add PGP keys</h2><blockquote>
+<p>gpg –recv-keys 5CC908FDB71E12C2</p>
+</blockquote>
+<h2 id="pip-SSL-certificates-error"><a href="#pip-SSL-certificates-error" class="headerlink" title="pip SSL_certificates_error"></a>pip SSL_certificates_error</h2>Refer to this <a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/42098126/mac-osx-python-ssl-sslerror-ssl-certificate-verify-failed-certificate-verify/42098127#42098127">link</a><h2 id="Linux-File-Authoritites"><a href="#Linux-File-Authoritites" class="headerlink" title="Linux File Authoritites"></a>Linux File Authoritites</h2>chown &amp; chmod ## Optimization required<h2 id="Have-Fun-with-Pacman"><a href="#Have-Fun-with-Pacman" class="headerlink" title="Have Fun with Pacman"></a>Have Fun with Pacman</h2><code>add ILoveCandy under Misc Options in /etc/pacman.conf and enjoy!</code><h2 id="Delete-a-package-with-Pacman"><a href="#Delete-a-package-with-Pacman" class="headerlink" title="Delete a package with Pacman"></a>Delete a package with Pacman</h2><blockquote>
+<p>sudo pacman -Rsc package</p>
+</blockquote>
+<h2 id="Installed-Python-but-no-pip-command"><a href="#Installed-Python-but-no-pip-command" class="headerlink" title="Installed Python but no pip command"></a>Installed Python but no pip command</h2></li>
+<li>pip is a library in python $/lib/ensurepip</li>
+<li>goto this directory and follow the guide to install<h2 id="Bash-generator"><a href="#Bash-generator" class="headerlink" title="Bash generator"></a>Bash generator</h2>DIY you bash with <a target="_blank" rel="noopener" href="http://bashrcgenerator.com/">link</a><h2 id="Disable-DPMS-auto-close-screen"><a href="#Disable-DPMS-auto-close-screen" class="headerlink" title="Disable DPMS(auto close screen)"></a>Disable DPMS(auto close screen)</h2>Refer to this <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/Display_Power_Management_Signaling">link</a><h2 id="Use-key-with-ssh-amp-git"><a href="#Use-key-with-ssh-amp-git" class="headerlink" title="Use key with ssh &amp; git"></a>Use key with ssh &amp; git</h2>Refer to this <a target="_blank" rel="noopener" href="https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">link</a><h2 id="Monitor-AMD-GPU"><a href="#Monitor-AMD-GPU" class="headerlink" title="Monitor AMD GPU"></a>Monitor AMD GPU</h2>Refer to this <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/AMDGPU#Monitoring">link</a><h2 id="Monitor-System-temperature"><a href="#Monitor-System-temperature" class="headerlink" title="Monitor System temperature"></a>Monitor System temperature</h2><blockquote>
+<p>sensors</p>
+</blockquote>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ArchLinux/" rel="tag"># ArchLinux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/05/13/ArchLinux/" rel="next" title="ArchLinux Installation">
+                <i class="fa fa-chevron-left"></i> ArchLinux Installation
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/05/13/Install-ArchLinux-in-LVM/" rel="prev" title="Install ArchLinux in LVM">
+                Install ArchLinux in LVM <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="" />
+          <p class="site-author-name" itemprop="name"></p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/zhifxu" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="zhifxu7@gmail.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                    
+                      E-Mail
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#static-ip"><span class="nav-number">1.</span> <span class="nav-text">static ip</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DNS-proxy"><span class="nav-number">2.</span> <span class="nav-text">DNS proxy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-in-ArchLinux"><span class="nav-number">3.</span> <span class="nav-text">Java in ArchLinux</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution-to-the-IntelliJ-IDEA-full-screen-in-Xmonad"><span class="nav-number">4.</span> <span class="nav-text">Solution to the IntelliJ IDEA full screen in Xmonad</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#QEMU-in-ArchLinux"><span class="nav-number">5.</span> <span class="nav-text">QEMU in ArchLinux</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution-to-multi-audio-cards-caused-no-speaker-out-in-ArchLinux"><span class="nav-number">6.</span> <span class="nav-text">Solution to multi audio cards caused no speaker out in ArchLinux</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ERROR-One-or-more-PGP-signatures-could-not-be-verified-arch-linux"><span class="nav-number">7.</span> <span class="nav-text">ERROR: One or more PGP signatures could not be verified, arch linux</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Multi-monitors-in-ArchLinux"><span class="nav-number">8.</span> <span class="nav-text">Multi monitors in ArchLinux</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Archlinuxcn"><span class="nav-number">9.</span> <span class="nav-text">Archlinuxcn</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Configuring-a-Socks-proxy-in-Chromium"><span class="nav-number">10.</span> <span class="nav-text">Configuring a Socks proxy in Chromium</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#If-the-Wifi-Conn-report-error"><span class="nav-number">11.</span> <span class="nav-text">If the Wifi Conn report error:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pacman-Update-Error-in-File-Conflict"><span class="nav-number">12.</span> <span class="nav-text">Pacman Update Error in File Conflict</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#If-only-one-software-can-play-sound-at-one-time-try-this"><span class="nav-number">13.</span> <span class="nav-text">If only one software can play sound at one time, try this</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Downgrade-the-package"><span class="nav-number">14.</span> <span class="nav-text">Downgrade the package</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Add-PGP-keys"><span class="nav-number">15.</span> <span class="nav-text">Add PGP keys</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pip-SSL-certificates-error"><span class="nav-number">16.</span> <span class="nav-text">pip SSL_certificates_error</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-File-Authoritites"><span class="nav-number">17.</span> <span class="nav-text">Linux File Authoritites</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Have-Fun-with-Pacman"><span class="nav-number">18.</span> <span class="nav-text">Have Fun with Pacman</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Delete-a-package-with-Pacman"><span class="nav-number">19.</span> <span class="nav-text">Delete a package with Pacman</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Installed-Python-but-no-pip-command"><span class="nav-number">20.</span> <span class="nav-text">Installed Python but no pip command</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bash-generator"><span class="nav-number">21.</span> <span class="nav-text">Bash generator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Disable-DPMS-auto-close-screen"><span class="nav-number">22.</span> <span class="nav-text">Disable DPMS(auto close screen)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Use-key-with-ssh-amp-git"><span class="nav-number">23.</span> <span class="nav-text">Use key with ssh &amp; git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Monitor-AMD-GPU"><span class="nav-number">24.</span> <span class="nav-text">Monitor AMD GPU</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Monitor-System-temperature"><span class="nav-number">25.</span> <span class="nav-text">Monitor System temperature</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhif Xu</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" target="_blank" rel="noopener" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
