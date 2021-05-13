@@ -95,9 +95,9 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="golB yM">
 <meta property="og:url" content="https://zhifxu.github.io/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="golB yM">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="Zhif Xu">
 <meta name="twitter:card" content="summary">
@@ -135,7 +135,7 @@
 
 
 
-  <title>Hexo</title>
+  <title>golB yM</title>
   
 
 
@@ -173,7 +173,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
+        <span class="site-title">golB yM</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -280,6 +280,468 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhifxu.github.io/2021/05/13/ArchLinux/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="golB yM">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/05/13/ArchLinux/" itemprop="url">ArchLinux</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-05-13T09:32:46+08:00">
+                2021-05-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="How-to-install-ArchLinux-amp-Solve-those-weird-problems"><a href="#How-to-install-ArchLinux-amp-Solve-those-weird-problems" class="headerlink" title="How to install ArchLinux &amp; Solve those weird problems"></a>How to install ArchLinux &amp; Solve those weird problems</h1><h2 id="Install-ArchLinux"><a href="#Install-ArchLinux" class="headerlink" title="Install ArchLinux"></a>Install ArchLinux</h2><p>**This is just a note, from the official <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Installation_guide">ArchLinux Guide</a></p>
+<ol>
+<li>Test the Internet conn<ul>
+<li><blockquote>
+<p>ping archliux.org</p>
+</blockquote>
+</li>
+<li>Q:If failed to conn to the Internet</li>
+<li>A:run this command twice <blockquote>
+<p>systemctl enable dhcpcd.service </p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>Update System time<ul>
+<li><blockquote>
+<p>timedatectl status</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>timedatectl set-ntp true</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>Start to Partition disks<ul>
+<li>see the disk status now<ul>
+<li><blockquote>
+<p>fdisk -l</p>
+</blockquote>
+</li>
+<li>find the partition you want to install ArchLinux and create the /part</li>
+</ul>
+</li>
+<li>Start to create partitions<ul>
+<li><blockquote>
+<p>cfdisk /dev/nvme or /dev/sda </p>
+</blockquote>
+</li>
+<li>Suggest to create a /home and a / for your system. If your pc don’t have enough memory, remember to create the Swap partition.</li>
+</ul>
+</li>
+<li>Format the partitions <ul>
+<li><blockquote>
+<p>mkfs.ext4 /dev/..</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>mkswap /dev/<em>swap partition</em> -L Swap</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>swapon /dev/<em>swap partition</em></p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Mount your / partition<ul>
+<li>Mount the root partition /</li>
+<li><blockquote>
+<p>mount /dev/<em>nvme or sda</em> /mnt</p>
+</blockquote>
+</li>
+<li>Mount the /home partition</li>
+<li><blockquote>
+<p>mkdir /mnt/home</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>mount /dev/<em>home partition</em> /mnt/home </p>
+</blockquote>
+</li>
+<li>Mount the EFI partition</li>
+<li><blockquote>
+<p>mkdir -p /mnt/boot/efi</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>mount /dev/<em>efi partition</em> /mnt/boot/efi</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>Installation<ul>
+<li>If your local Internet not so good, consider to use a local mirror. </li>
+<li>Write the Mirror link into ‘/mnt/etc/pacman.d/mirrorlist’</li>
+<li><blockquote>
+<p>vi /etc/pacman.d/mirrorlist</p>
+</blockquote>
+</li>
+<li>Start to Install</li>
+<li><blockquote>
+<p>pacstrap /mnt base base-devel linux linux-firmware vim</p>
+</blockquote>
+</li>
+<li>Configure the fstab &amp; check whether the fstab is generated correctly</li>
+<li><blockquote>
+<p>genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>vi /mnt/etc/fstab *If correct generated, the partition information would exist in this file.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>Initialize the new system environment<ul>
+<li><blockquote>
+<p>arch-chroot /mnt</p>
+</blockquote>
+</li>
+<li>set timezone</li>
+<li><blockquote>
+<p>ln -sf /usr/share/zoneinfo/Region/City /etc/localtime</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>hwclock –systohc</p>
+</blockquote>
+</li>
+<li>Localization</li>
+<li><blockquote>
+<p>vi /etc/locale.gen <em><strong>remove the # front of en_US.UTF-8 UTF-8 zh_CN/UTF-8 UTF-8 zh_TW.UTF-8 UTF-8</strong></em></p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>locale-gen</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>locale -a</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>echo LANG=en_US.UTF-8 &gt; /etc/locale.conf</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>locale</p>
+</blockquote>
+</li>
+<li>Set hostname</li>
+<li><blockquote>
+<p>echo myhostname &gt; /etc/hostname</p>
+</blockquote>
+</li>
+<li>Configure the hosts</li>
+<li><blockquote>
+<blockquote>
+<p>127.0.0.1  localhost.localdomain   localhost</p>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<p>::1        localhost.localdomain   localhost</p>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<p>127.0.0.1  myhostname.localdomain  myhostname</p>
+</blockquote>
+</blockquote>
+</li>
+<li>Set root password</li>
+<li><blockquote>
+<p>passwd</p>
+</blockquote>
+</li>
+<li>Install some packages</li>
+<li><blockquote>
+<p>pacman -S vim ntfs-3g networkmanager</p>
+</blockquote>
+</li>
+<li>Install CPU ucode<ul>
+<li>Intel CPU</li>
+<li><blockquote>
+<p>pacman -S intel-ucode</p>
+</blockquote>
+</li>
+<li>AMD CPu</li>
+<li><blockquote>
+<p>pacman -S amd-ucode</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>Install &amp; Configure grub</li>
+<li><blockquote>
+<p>pacman -S grub efibootmgr os-prober</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>grub-install –target=x86_64-efi –efi-directory=/boot/efi –bootloader-id=myLinux</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>grub-mkconfig -o /boot/grub/grub.cfg</p>
+</blockquote>
+</li>
+<li>Finally</li>
+<li><blockquote>
+<p>systemctl enable dhcpcd.service <em><strong>twice</strong></em></p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>Exit and Reboot<ul>
+<li><blockquote>
+<p>exit</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>umount -R /mnt</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>reboot</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>Prepare for the first using<ul>
+<li><blockquote>
+<p>pacman -Syu</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>pacman -S bash-completion</p>
+</blockquote>
+</li>
+<li>Create a User</li>
+<li><blockquote>
+<p>useradd -m -g users -G audio,video,network,wheel,storage -s /bin/bash <em>yourname</em></p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>passwd yourname</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>EDITOR=vim visudo <strong>remove # front of %wheel ALL=(ALL) ALL</strong></p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>exit</p>
+</blockquote>
+</li>
+<li>Login as the new user just created </li>
+<li><blockquote>
+<p>sudo pacman -Syu</p>
+</blockquote>
+</li>
+<li>Install xorg xfce4-terminal</li>
+<li><blockquote>
+<p>sudo pacman -S xorg-server xorg-apps xorg-xinit xterm xfce4-terminal </p>
+</blockquote>
+</li>
+<li>Install GPU drivers</li>
+<li><blockquote>
+<p>lspci|grep -e VGA -e 3D  </p>
+</blockquote>
+</li>
+<li>check which Graphic driver need to install. <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/Xorg">link</a></li>
+<li><blockquote>
+<p>sudo pacman -S nvidia</p>
+</blockquote>
+</li>
+<li>Install cable net and wifi</li>
+<li><blockquote>
+<p>sudo pacman -S wpa_supplicant dhcpcd dialog ppp net-tools netctl </p>
+</blockquote>
+</li>
+<li>Install xmonad window manager</li>
+<li><blockquote>
+<p>sudo paxman -S xmonad xmonad-contrib xmobar stalonetray dmenu</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>vim ~/.xinitrc</p>
+</blockquote>
+</li>
+<li>xsetroot -cursor_name left_ptr</li>
+<li>xset s off -dpms <em><strong>prevent the system auto sleep</strong></em></li>
+<li>xrandr –output DP-0 –off –output DP-1 –off –output HDMI-0 –off –output DP-2 –mode 1920x1080 –pos 0x0 –rotate right –output DP-3 –off –output DP-4 –off –output DP-5 –off <em><strong>Set the monitors and resolutions</strong></em></li>
+<li>exec xmonad</li>
+<li>Configure xmonad wm</li>
+<li><blockquote>
+<p>vim ~/.xmonad/xmonad.hs</p>
+</blockquote>
+</li>
+<li>import XMnad</li>
+<li>improt Xmonad.Hooks.SetWMName</li>
+<li>main = do<ul>
+<li>xmonad $ defaultConfig<ul>
+<li>{terminal = “xfce4-terminal”,</li>
+<li> modMask = “mod4Mask”,</li>
+<li> borderWidth = 0,</li>
+<li> startupHook = setWMName “LG3D”}</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><blockquote>
+<p>xmonad –recompile</p>
+</blockquote>
+</li>
+<li>Install fonts</li>
+<li><blockquote>
+<p>sudo pacman -S wqy-microhei ttf-arphic-ukai ttf-arphic-uming</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>ENjoy it!</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://zhifxu.github.io/2021/05/12/First-Post/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -289,7 +751,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="golB yM">
     </span>
 
     
@@ -432,12 +894,21 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
           
 
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
           
 
           
@@ -447,6 +918,30 @@
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/zhifxu" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="zhifxu7@gmail.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                    
+                      E-Mail
+                    
+                </a>
+              </span>
+            
           
         </div>
 
