@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="ArchLinux," />
+  <meta name="keywords" content="Deep learning," />
 
 
 
@@ -94,17 +94,17 @@
 
 
 
-<meta name="description" content="Refer to this link Partition Structure&#x2F;dev&#x2F;sda consist of   EFI Swap LVM &#x2F;dev&#x2F;sdb –&gt; fusioned partitionTo Be Continued">
+<meta name="description" content="At the beginning, when reading articles and blogs, I thought that the structure of bert’s encoder and transformer’s encoder was exactly the same, and I didn’t check the official source code of the two">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Install ArchLinux in LVM">
-<meta property="og:url" content="https://zhifxu.github.io/2021/05/13/Install-ArchLinux-in-LVM/index.html">
+<meta property="og:title" content="Bert activations v.s. Transformer activation">
+<meta property="og:url" content="https://zhifxu.github.io/2021/08/05/Bert-activations-v-s-Transformer-activation/index.html">
 <meta property="og:site_name" content="Zhifeng Xu">
-<meta property="og:description" content="Refer to this link Partition Structure&#x2F;dev&#x2F;sda consist of   EFI Swap LVM &#x2F;dev&#x2F;sdb –&gt; fusioned partitionTo Be Continued">
+<meta property="og:description" content="At the beginning, when reading articles and blogs, I thought that the structure of bert’s encoder and transformer’s encoder was exactly the same, and I didn’t check the official source code of the two">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-05-13T08:39:08.000Z">
-<meta property="article:modified_time" content="2021-05-13T08:45:38.000Z">
+<meta property="article:published_time" content="2021-08-05T02:48:10.000Z">
+<meta property="article:modified_time" content="2021-08-05T03:07:57.339Z">
 <meta property="article:author" content="Zhif Xu">
-<meta property="article:tag" content="ArchLinux">
+<meta property="article:tag" content="Deep learning">
 <meta name="twitter:card" content="summary">
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="https://zhifxu.github.io/2021/05/13/Install-ArchLinux-in-LVM/"/>
+  <link rel="canonical" href="https://zhifxu.github.io/2021/08/05/Bert-activations-v-s-Transformer-activation/"/>
 
 
 
 
 
-  <title>Install ArchLinux in LVM | Zhifeng Xu</title>
+  <title>Bert activations v.s. Transformer activation | Zhifeng Xu</title>
   
 
 
@@ -283,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zhifxu.github.io/2021/05/13/Install-ArchLinux-in-LVM/">
+    <link itemprop="mainEntityOfPage" href="https://zhifxu.github.io/2021/08/05/Bert-activations-v-s-Transformer-activation/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -300,7 +300,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Install ArchLinux in LVM</h1>
+          <h1 class="post-title" itemprop="name headline">Bert activations v.s. Transformer activation</h1>
         
 
         <div class="post-meta">
@@ -312,8 +312,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-05-13T16:39:08+08:00">
-                2021-05-13
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-08-05T10:48:10+08:00">
+                2021-08-05
               </time>
             
 
@@ -335,8 +335,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
+                  <a href="/categories/Deep-learning/" itemprop="url" rel="index">
+                    <span itemprop="name">Deep learning</span>
                   </a>
                 </span>
 
@@ -372,16 +372,17 @@
       
 
       
-        <p>Refer to this <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/LVM">link</a></p>
-<h2 id="Partition-Structure"><a href="#Partition-Structure" class="headerlink" title="Partition Structure"></a>Partition Structure</h2><p>/dev/sda consist of </p>
-<ol>
-<li>EFI</li>
-<li>Swap</li>
-<li>LVM<ul>
-<li>/dev/sdb –&gt; fusioned partition<h1 id="To-Be-Continued"><a href="#To-Be-Continued" class="headerlink" title="To Be Continued"></a>To Be Continued</h1></li>
-</ul>
-</li>
-</ol>
+        <p>At the beginning, when reading articles and blogs, I thought that the structure of bert’s encoder and transformer’s encoder was exactly the same, and I didn’t check the official source code of the two encoders carefully, but recently I realized that the two encoders only have the same structure, but the activation functions are different.</p>
+<h3 id="BERT-encoder"><a href="#BERT-encoder" class="headerlink" title="BERT encoder"></a>BERT encoder</h3><p>google_tensorflow_implementation <a target="_blank" rel="noopener" href="https://github.com/google-research/bert/blob/master/modeling.py">link</a></p>
+<p>pytorch_implementation <a target="_blank" rel="noopener" href="https://github.com/codertimo/BERT-pytorch/blob/master/bert_pytorch/model/utils/feed_forward.py">link</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### pytorch implemented feedforward layer of encoder</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PositionwiseFeedForward</span>(<span class="params">nn.Module</span>):</span></span><br><span class="line">    <span class="string">&quot;Implements FFN equation.&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, d_model, d_ff, dropout=<span class="number">0.1</span></span>):</span></span><br><span class="line">        <span class="built_in">super</span>(PositionwiseFeedForward, self).__init__()</span><br><span class="line">        self.w_1 = nn.Linear(d_model, d_ff)</span><br><span class="line">        self.w_2 = nn.Linear(d_ff, d_model)</span><br><span class="line">        self.dropout = nn.Dropout(dropout)</span><br><span class="line">        self.activation = GELU()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span>(<span class="params">self, x</span>):</span></span><br><span class="line">        <span class="keyword">return</span> self.w_2(self.dropout(self.activation(self.w_1(x))))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### pytorch implemented bert encoder</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TransformerBlock</span>(<span class="params">nn.Module</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    Bidirectional Encoder = Transformer (self-attention)</span></span><br><span class="line"><span class="string">    Transformer = MultiHead_Attention + Feed_Forward with sublayer connection</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, hidden, attn_heads, feed_forward_hidden, dropout</span>):</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :param hidden: hidden size of transformer</span></span><br><span class="line"><span class="string">        :param attn_heads: head sizes of multi-head attention</span></span><br><span class="line"><span class="string">        :param feed_forward_hidden: feed_forward_hidden, usually 4*hidden_size</span></span><br><span class="line"><span class="string">        :param dropout: dropout rate</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        self.attention = MultiHeadedAttention(h=attn_heads, d_model=hidden)</span><br><span class="line">        self.feed_forward = PositionwiseFeedForward(d_model=hidden, d_ff=feed_forward_hidden, dropout=dropout)</span><br><span class="line">        self.input_sublayer = SublayerConnection(size=hidden, dropout=dropout)</span><br><span class="line">        self.output_sublayer = SublayerConnection(size=hidden, dropout=dropout)</span><br><span class="line">        self.dropout = nn.Dropout(p=dropout)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span>(<span class="params">self, x, mask</span>):</span></span><br><span class="line">        x = self.input_sublayer(x, <span class="keyword">lambda</span> _x: self.attention.forward(_x, _x, _x, mask=mask))</span><br><span class="line">        x = self.output_sublayer(x, self.feed_forward)</span><br><span class="line">        <span class="keyword">return</span> self.dropout(x)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Initial-transformer-encoder"><a href="#Initial-transformer-encoder" class="headerlink" title="Initial transformer encoder"></a>Initial transformer encoder</h3><p>pytorch_implementation <a target="_blank" rel="noopener" href="https://github.com/jayparks/transformer/blob/master/transformer/sublayers.py">link</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">###pytorch implemented feedforward of transformer encoder</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PoswiseFeedForwardNet</span>(<span class="params">nn.Module</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, d_model, d_ff, dropout=<span class="number">0.1</span></span>):</span></span><br><span class="line">        <span class="built_in">super</span>(PoswiseFeedForwardNet, self).__init__()</span><br><span class="line">        self.relu = nn.ReLU()</span><br><span class="line">        self.conv1 = nn.Conv1d(in_channels=d_model, out_channels=d_ff, kernel_size=<span class="number">1</span>)</span><br><span class="line">        self.conv2 = nn.Conv1d(in_channels=d_ff, out_channels=d_model, kernel_size=<span class="number">1</span>)</span><br><span class="line">        self.dropout = nn.Dropout(dropout)</span><br><span class="line">        self.layer_norm = LayerNormalization(d_model)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span>(<span class="params">self, inputs</span>):</span></span><br><span class="line">        <span class="comment"># inputs: [b_size x len_q x d_model]</span></span><br><span class="line">        residual = inputs</span><br><span class="line">        output = self.relu(self.conv1(inputs.transpose(<span class="number">1</span>, <span class="number">2</span>)))</span><br><span class="line"></span><br><span class="line">        <span class="comment"># outputs: [b_size x len_q x d_model]</span></span><br><span class="line">        output = self.conv2(output).transpose(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line">        output = self.dropout(output)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> self.layer_norm(residual + output)</span><br></pre></td></tr></table></figure>
+
+<h3 id="summarization"><a href="#summarization" class="headerlink" title="summarization"></a>summarization</h3><p>From the code, we can see that the feed forward in bert’s encoder uses the gelu activation function, while the feed forward in transformer’s encoder uses the relu activation function</p>
 
       
     </div>
@@ -399,7 +400,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/ArchLinux/" rel="tag"># ArchLinux</a>
+            <a href="/tags/Deep-learning/" rel="tag"># Deep learning</a>
           
         </div>
       
@@ -412,8 +413,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2021/05/13/Problems-In-ArchLinux/" rel="next" title="Problems In ArchLinux">
-                <i class="fa fa-chevron-left"></i> Problems In ArchLinux
+              <a href="/2021/07/01/A-Good-Paper/" rel="next" title="A Good Paper">
+                <i class="fa fa-chevron-left"></i> A Good Paper
               </a>
             
           </div>
@@ -421,10 +422,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2021/05/13/SFF-ITX-with-water-Loop/" rel="prev" title="SFF ITX with water Loop">
-                SFF ITX with water Loop <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -582,7 +579,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Partition-Structure"><span class="nav-number">1.</span> <span class="nav-text">Partition Structure</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#To-Be-Continued"><span class="nav-number"></span> <span class="nav-text">To Be Continued</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#BERT-encoder"><span class="nav-number">1.</span> <span class="nav-text">BERT encoder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Initial-transformer-encoder"><span class="nav-number">2.</span> <span class="nav-text">Initial transformer encoder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#summarization"><span class="nav-number">3.</span> <span class="nav-text">summarization</span></a></li></ol></div>
             
 
           </div>

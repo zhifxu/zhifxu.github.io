@@ -3,7 +3,13 @@ title: about
 date: 2021-05-12 22:17:08
 ---
 
-##### continuing update
+# Zhifeng Xu
+
+-----------------------
+
+zhifxu@aust.edu.cn
+
+--------------------------------------
 
 I am a post-graduate student in Anhui University of Science and Technology now. 
 
@@ -17,6 +23,8 @@ I can use git, qemu, docker and conda proficiently in Linux.
 
 ​		Sep, 2014-July, 2018. Information Security, School of Computer Science and Information Security, Guilin University of Electronic and Technology. 
 
+​		Thesis title: An implementation of public key infrastructure (PKI) system
+
 ### 	M.S.
 
 ​		Sep, 2019-Now. Computer Science and Technology, School of Computer Science and Engineering, Anhui University of Science and Technology.
@@ -29,3 +37,6 @@ I can use git, qemu, docker and conda proficiently in Linux.
 
 ## Research Journey
 
+- Taalaibekova K., Fang X., **Xu Z**. (2020) A Novel Method to Improve Security and Imperceptibility of Image Steganography. In: Xu G., Liang K., Su C. (eds) Frontiers in Cyber Security. FCS 2020. (Conference) 
+  - Work: Collaboration on the main idea, analyze whether to use multi-prime RSA or ECDSA for the encryption part, and give an application scenario for the steganography.
+- 
